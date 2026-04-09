@@ -41,14 +41,14 @@ export default function Home() {
           </div>
 
           <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-            Etkinlik Günü
+            KAPLAN OKULLARI <br></br> Veli Etkinliklikleri
             <span className="block bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
               Kayıt Sistemi
             </span>
           </h1>
           <p className="mt-6 text-lg leading-8 text-gray-600">
             Kaplan Okulları etkinlik günü aktivitelerine hızlı ve kolay kayıt
-            olun. Çocuğunuz için uygun etkinliği seçin ve yerinizi ayırtın.
+            olun. Dilediğiniz etkinliği seçin ve yerinizi ayırtın.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link
@@ -62,16 +62,16 @@ export default function Home() {
             </Link>
           </div>
         </div>
-      </main>
+      </main >
 
       {/* Footer */}
-      <footer className="border-t border-gray-100 bg-white py-6">
+      < footer className="border-t border-gray-100 bg-white py-6" >
         <div className="mx-auto max-w-5xl px-4 text-center">
           <p className="text-sm text-gray-400">
             © 2026 Kaplan Okulları — Etkinlik Kayıt Sistemi
           </p>
         </div>
-      </footer>
-    </div>
+      </footer >
+    </div >
   );
 }
