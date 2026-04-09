@@ -1,3 +1,4 @@
+/* eslint-disable */
 // Supabase'e SQL şemasını uygulama scripti
 // supabase-js kullanarak rpc çağrısı yapmak yerine,
 // her table oluşturmayı ayrı ayrı yapıyoruz.
