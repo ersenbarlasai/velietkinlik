@@ -255,7 +255,7 @@ export default function KayitPage() {
                           <Select
                             value={selectedEtkinlik || ""}
                             onValueChange={(v) => {
-                              setSelectedEtkinlik(v);
+                              setSelectedEtkinlik(v || "");
                               setSelectedSaat("");
                             }}
                           >
