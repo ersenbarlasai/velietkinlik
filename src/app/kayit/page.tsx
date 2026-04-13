@@ -250,6 +250,11 @@ export default function KayitPage() {
                       </Alert>
                     ) : (
                       <div className="space-y-6">
+                        <Alert className="bg-blue-50 border-blue-200">
+                          <AlertDescription className="text-blue-800 text-sm">
+                            <span className="font-medium">Bilgi:</span> Bir öğrenci en fazla <strong>2 farklı etkinliğe</strong> kayıt olabilir. Farklı bir etkinliğe daha kayıt olmak için bu işlemi tamamladıktan sonra tekrar kayıt oluşturabilirsiniz.
+                          </AlertDescription>
+                        </Alert>
                         <div className="space-y-2">
                           <Label>Etkinlik Seçin</Label>
                           <Select

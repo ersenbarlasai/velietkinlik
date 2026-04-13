@@ -59,6 +59,7 @@ export async function POST(request: Request) {
       .from("kayitlar")
       .select("id")
       .eq("ogrenci_ad_soyad", ogrenci_ad_soyad)
+      .eq("veli_telefon", veli_telefon)
       .eq("etkinlik_saati_id", etkinlik_saati_id)
       .maybeSingle();
 
@@ -69,7 +70,21 @@ export async function POST(request: Request) {
       );
     }
 
-    // Kayıt oluştur
+    // Bir öğrencinin (veya velinin) en fazla 2 atölye (etkinlik) seçebileceği kontrolü
+    const { count: ogrenciKayitSayisi } = await supabaseAdmin
+      .from("kayitlar")
+      .select("*", { count: "exact", head: true })
+      .eq("ogrenci_ad_soyad", ogrenci_ad_soyad)
+      .eq("veli_telefon", veli_telefon);
+
+    if (ogrenciKayitSayisi !== null && ogrenciKayitSayisi >= 2) {
+      return NextResponse.json(
+        { success: false, message: "Bir öğrenci için en fazla 2 farklı atölyeye (etkinliğe) kayıt olabilirsiniz." },
+        { status: 403 }
+      );
+    }
+
+
     const { data, error } = await supabaseAdmin
       .from("kayitlar")
       .insert({
